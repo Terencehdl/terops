@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Automatisation Ops — Terence Hilderal</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,7 +32,6 @@
     cursor: none;
   }
 
-  /* Custom cursor */
   .cursor {
     width: 10px; height: 10px;
     background: var(--blue);
@@ -54,7 +53,6 @@
     transition: all 0.12s ease;
   }
 
-  /* Grid background */
   body::before {
     content: '';
     position: fixed;
@@ -120,9 +118,9 @@
   }
 
   .hero-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(42px, 7vw, 96px);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.0;
     letter-spacing: -0.03em;
     margin-bottom: 12px;
@@ -157,7 +155,7 @@
     gap: 10px;
     background: var(--blue);
     color: #fff;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 16px;
     padding: 16px 36px;
@@ -204,13 +202,11 @@
     animation: fadeDown 0.7s 0.45s ease both;
   }
 
-  .proof-item {
-    text-align: center;
-  }
+  .proof-item { text-align: center; }
   .proof-num {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     display: block;
   }
@@ -223,7 +219,7 @@
     letter-spacing: 0.08em;
   }
 
-  /* ── PROBLEM ── */
+  /* ── SECTIONS ── */
   .section {
     padding: 100px 24px;
     max-width: 1100px;
@@ -242,15 +238,15 @@
   }
 
   .section-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(30px, 4vw, 52px);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
 
-  /* PROBLEM CARDS */
+  /* ── PROBLEM ── */
   .problem-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -274,7 +270,7 @@
   }
 
   .problem-card h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 17px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -285,6 +281,120 @@
     font-size: 14px;
     color: var(--slate-light);
     line-height: 1.65;
+  }
+
+  /* ── USE CASES ── */
+  .usecases-section {
+    padding: 100px 24px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,20,40,0.6) 50%, transparent 100%);
+  }
+
+  .usecases-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .usecases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .usecase-card {
+    background: var(--navy);
+    padding: 36px 32px;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .usecase-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .usecase-card:hover { background: rgba(13,20,40,0.95); }
+  .usecase-card:hover::before { transform: scaleX(1); }
+
+  .usecase-icon {
+    font-size: 26px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .usecase-trigger {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .usecase-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .usecase-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .flow-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--slate-light);
+  }
+
+  .flow-step .arrow {
+    color: var(--green);
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  .usecase-gain {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    margin-top: 4px;
+  }
+
+  .usecase-pain {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 2px solid rgba(37,99,235,0.3);
+    padding-left: 12px;
+    margin-bottom: 16px;
   }
 
   /* ── PYRAMID ── */
@@ -352,7 +462,7 @@
   }
 
   .pstep-name {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--white);
@@ -371,7 +481,7 @@
   .step-4 .pstep-name, .step-5 .pstep-name { color: var(--green); }
   .step-4 .pstep-num, .step-5 .pstep-num { color: var(--green-dim); }
 
-  /* ── OFFER ── */
+  /* ── OFFERS ── */
   .offer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -402,7 +512,6 @@
 
   .offer-card.featured::before { transform: scaleX(1); background: var(--green); }
   .offer-card.featured { border-color: rgba(16,185,129,0.25); }
-
   .offer-card:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-4px); }
   .offer-card:hover::before { transform: scaleX(1); }
 
@@ -420,9 +529,9 @@
   }
 
   .offer-price {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 38px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 4px;
   }
@@ -431,7 +540,7 @@
   .offer-period { font-size: 13px; color: var(--slate); margin-bottom: 24px; }
 
   .offer-name {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -477,7 +586,7 @@
     background: transparent;
     border: 1px solid var(--border);
     color: var(--slate-light);
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
@@ -534,7 +643,7 @@
   }
 
   .how-content h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 19px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -638,12 +747,8 @@
     transform: translateY(32px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
+  .reveal.visible { opacity: 1; transform: none; }
 
-  /* Glow orb */
   .orb {
     position: fixed;
     width: 600px;
@@ -655,7 +760,6 @@
     transition: left 1s ease, top 1s ease;
   }
 
-  /* Separator */
   .sep {
     width: 60px;
     height: 3px;
@@ -678,7 +782,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="orb" id="orb"></div>
 
-<!-- ── HERO ────────────────────────────────────────────────────────────── -->
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-badge">Ex-Superviseur industriel 80MW · Disponible pour audit</div>
   <p class="hero-eyebrow">Automatisation Ops · PME Industrielles</p>
@@ -711,7 +815,7 @@
   </div>
 </section>
 
-<!-- ── PROBLEM ──────────────────────────────────────────────────────────── -->
+<!-- ── PROBLEM ── -->
 <section class="section reveal">
   <p class="section-label">// Le problème</p>
   <h2 class="section-title">Vous perdez du temps<br>que vous n'avez pas.</h2>
@@ -719,29 +823,106 @@
   <div class="problem-grid">
     <div class="problem-card">
       <span class="problem-icon">📊</span>
-      <h3>Les données sont partout</h3>
-      <p>Production, maintenance, énergie — éparpillées dans 4 Excel différents. Personne n'a la vue globale.</p>
+      <h3>Excel partout, vue globale nulle part</h3>
+      <p>Production, maintenance, stocks — éparpillés dans 4 fichiers différents. Personne n'a la vue globale en temps réel.</p>
     </div>
     <div class="problem-card">
       <span class="problem-icon">⏱</span>
-      <h3>Les reportings mangent les lundis</h3>
-      <p>Copier-coller, mettre en forme, envoyer. 2h perdues chaque semaine pour des données qui arrivent trop tard.</p>
+      <h3>Le lundi matin part en copier-coller</h3>
+      <p>Compiler les données, mettre en forme le rapport, l'envoyer. 2h perdues chaque semaine pour des chiffres qui arrivent trop tard.</p>
     </div>
     <div class="problem-card">
       <span class="problem-icon">🔔</span>
       <h3>Les alertes arrivent après</h3>
-      <p>Vous apprenez le problème quand le client appelle. Pas quand il fallait agir.</p>
+      <p>Stock épuisé, incident terrain, seuil dépassé — vous l'apprenez quand le problème est déjà là. Pas quand il fallait agir.</p>
     </div>
     <div class="problem-card">
-      <span class="problem-icon">🔁</span>
-      <h3>Relances et suivi en manuel</h3>
-      <p>Devis, factures, onboarding clients — chaque étape nécessite une intervention humaine. À chaque fois.</p>
+      <span class="problem-icon">📝</span>
+      <h3>La saisie terrain reste manuelle</h3>
+      <p>Les opérateurs notent sur papier, vous ressaisissez. Chaque compte-rendu, chaque rapport d'incident passe par une intervention humaine.</p>
     </div>
   </div>
 </section>
 
-<!-- ── PYRAMID ──────────────────────────────────────────────────────────── -->
-<section class="pyramid-section reveal" id="comment">
+<!-- ── USE CASES ── -->
+<section class="usecases-section reveal" id="comment">
+  <div class="usecases-inner">
+    <p class="section-label">// Ce qu'on automatise concrètement</p>
+    <h2 class="section-title">5 cas d'usage qui font<br>gagner du temps dès la semaine 1.</h2>
+    <div class="sep"></div>
+    <div class="usecases-grid">
+
+      <div class="usecase-card">
+        <span class="usecase-icon">📋</span>
+        <p class="usecase-trigger">Reporting</p>
+        <h3>Excel rempli → rapport PDF généré et envoyé</h3>
+        <p class="usecase-pain">"Je passe 2h chaque lundi à mettre en forme le rapport de prod."</p>
+        <div class="usecase-flow">
+          <div class="flow-step"><span class="arrow">→</span> Fichier Excel mis à jour par l'équipe</div>
+          <div class="flow-step"><span class="arrow">→</span> Rapport PDF généré automatiquement</div>
+          <div class="flow-step"><span class="arrow">→</span> Envoyé par email sans intervention</div>
+        </div>
+        <span class="usecase-gain">⏱ ~2h récupérées / semaine</span>
+      </div>
+
+      <div class="usecase-card">
+        <span class="usecase-icon">📱</span>
+        <p class="usecase-trigger">Saisie terrain</p>
+        <h3>Formulaire mobile → suivi Excel + alerte responsable</h3>
+        <p class="usecase-pain">"Les opérateurs notent sur papier, je ressaisis tout après."</p>
+        <div class="usecase-flow">
+          <div class="flow-step"><span class="arrow">→</span> Opérateur remplit un formulaire sur téléphone</div>
+          <div class="flow-step"><span class="arrow">→</span> Ligne ajoutée dans votre suivi Excel</div>
+          <div class="flow-step"><span class="arrow">→</span> Responsable notifié instantanément</div>
+        </div>
+        <span class="usecase-gain">⏱ Zéro ressaisie manuelle</span>
+      </div>
+
+      <div class="usecase-card">
+        <span class="usecase-icon">📦</span>
+        <p class="usecase-trigger">Gestion stocks</p>
+        <h3>Seuil bas → alerte + email fournisseur automatique</h3>
+        <p class="usecase-pain">"J'apprends la rupture de stock quand c'est trop tard."</p>
+        <div class="usecase-flow">
+          <div class="flow-step"><span class="arrow">→</span> Stock Excel passe sous le seuil critique</div>
+          <div class="flow-step"><span class="arrow">→</span> Alerte envoyée au responsable</div>
+          <div class="flow-step"><span class="arrow">→</span> Email au fournisseur déclenché</div>
+        </div>
+        <span class="usecase-gain">⏱ Zéro rupture non anticipée</span>
+      </div>
+
+      <div class="usecase-card">
+        <span class="usecase-icon">🚨</span>
+        <p class="usecase-trigger">Incidents</p>
+        <h3>Incident signalé → ticket créé + équipe notifiée</h3>
+        <p class="usecase-pain">"Les remontées terrain se perdent dans les mails, personne ne sait qui gère."</p>
+        <div class="usecase-flow">
+          <div class="flow-step"><span class="arrow">→</span> Incident signalé par email ou formulaire</div>
+          <div class="flow-step"><span class="arrow">→</span> Ticket créé dans Notion / Airtable</div>
+          <div class="flow-step"><span class="arrow">→</span> Équipe notifiée, suivi centralisé</div>
+        </div>
+        <span class="usecase-gain">⏱ Traçabilité complète, zéro perte</span>
+      </div>
+
+      <div class="usecase-card">
+        <span class="usecase-icon">📈</span>
+        <p class="usecase-trigger">Synthèse direction</p>
+        <h3>Données hebdo → synthèse envoyée au dirigeant le lundi</h3>
+        <p class="usecase-pain">"Mon patron veut un point chaque semaine, je le fais à la main à chaque fois."</p>
+        <div class="usecase-flow">
+          <div class="flow-step"><span class="arrow">→</span> Données Excel consolidées automatiquement</div>
+          <div class="flow-step"><span class="arrow">→</span> Synthèse mise en forme</div>
+          <div class="flow-step"><span class="arrow">→</span> Envoyée chaque lundi à 8h sans action</div>
+        </div>
+        <span class="usecase-gain">⏱ ~1h30 récupérées / semaine</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PYRAMID ── -->
+<section class="pyramid-section reveal">
   <div class="pyramid-inner">
     <p class="section-label">// Mon approche pyramidale</p>
     <h2 class="section-title">Du problème à l'autonomie<br>en 5 niveaux</h2>
@@ -792,7 +973,7 @@
   </div>
 </section>
 
-<!-- ── OFFERS ───────────────────────────────────────────────────────────── -->
+<!-- ── OFFERS ── -->
 <section class="section reveal" id="offres">
   <p class="section-label">// Les offres</p>
   <h2 class="section-title">Choisissez votre niveau<br>d'automatisation.</h2>
@@ -849,7 +1030,7 @@
   </div>
 </section>
 
-<!-- ── HOW ──────────────────────────────────────────────────────────────── -->
+<!-- ── HOW ── -->
 <section class="section reveal">
   <p class="section-label">// Comment ça se passe</p>
   <h2 class="section-title">De l'audit à la livraison<br>en moins d'un mois.</h2>
@@ -894,7 +1075,7 @@
   </div>
 </section>
 
-<!-- ── CTA FINAL ─────────────────────────────────────────────────────────── -->
+<!-- ── CTA FINAL ── -->
 <section class="cta-section reveal" id="audit">
   <div class="cta-box">
     <p class="section-label">// Prochaine étape</p>
@@ -907,7 +1088,7 @@
   </div>
 </section>
 
-<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<!-- ── FOOTER ── -->
 <footer>
   <p>
     <strong style="color:var(--white)">Terence Hilderal</strong> · Automatisation Ops pour PME ·
@@ -917,7 +1098,6 @@
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   const orb = document.getElementById('orb');
@@ -953,7 +1133,6 @@
     });
   });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
@@ -964,7 +1143,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(r => observer.observe(r));
 
-  // Pyramid hover highlight
   document.querySelectorAll('.pyramid-step').forEach(step => {
     step.addEventListener('mouseenter', () => {
       step.querySelector('.pstep-bar').style.boxShadow = '0 0 24px rgba(37,99,235,0.25)';
