@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automatisation Ops — Terence Hilderal</title>
+<title>TerOps — Automatisation Ops · PME Industrielles</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -11,15 +11,18 @@
   :root {
     --bg: #080c18;
     --navy: #0d1428;
-    --blue: #2563eb;
-    --blue-dim: #1d4ed8;
+    --amber: #f59e0b;
+    --amber-dim: #d97706;
+    --amber-light: #fcd34d;
+    --amber-glow: rgba(245,158,11,0.15);
     --green: #10b981;
     --green-dim: #059669;
     --red: #ef4444;
     --white: #f8fafc;
     --slate: #64748b;
     --slate-light: #94a3b8;
-    --border: rgba(37,99,235,0.15);
+    --border: rgba(245,158,11,0.15);
+    --border-dim: rgba(245,158,11,0.08);
   }
 
   html { scroll-behavior: smooth; }
@@ -34,7 +37,7 @@
 
   .cursor {
     width: 10px; height: 10px;
-    background: var(--blue);
+    background: var(--amber);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -44,7 +47,7 @@
   }
   .cursor-ring {
     width: 36px; height: 36px;
-    border: 1px solid rgba(37,99,235,0.5);
+    border: 1px solid rgba(245,158,11,0.5);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -58,11 +61,50 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(245,158,11,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,158,11,0.03) 1px, transparent 1px);
     background-size: 56px 56px;
     pointer-events: none;
     z-index: 0;
+  }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #25d366;
+    color: #fff;
+    padding: 14px 22px 14px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: floatIn 0.8s 1s ease both;
+  }
+  .wa-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+  }
+  .wa-float svg {
+    width: 22px; height: 22px;
+    fill: #fff;
+    flex-shrink: 0;
+  }
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 640px) {
+    .wa-float span { display: none; }
+    .wa-float { padding: 16px; border-radius: 50%; }
   }
 
   /* ── HERO ── */
@@ -82,13 +124,13 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(37,99,235,0.12);
-    border: 1px solid rgba(37,99,235,0.3);
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.3);
     border-radius: 100px;
     padding: 8px 20px;
     font-family: 'DM Mono', monospace;
     font-size: 12px;
-    color: var(--blue);
+    color: var(--amber);
     letter-spacing: 0.05em;
     margin-bottom: 40px;
     animation: fadeDown 0.6s ease both;
@@ -119,19 +161,19 @@
 
   .hero-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(42px, 7vw, 96px);
+    font-size: clamp(36px, 6vw, 82px);
     font-weight: 700;
-    line-height: 1.0;
+    line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: 12px;
     animation: fadeDown 0.7s 0.15s ease both;
   }
 
-  .hero-title .accent { color: var(--blue); }
+  .hero-title .accent { color: var(--amber); }
   .hero-title .accent-g { color: var(--green); }
 
   .hero-sub {
-    font-size: clamp(17px, 2.2vw, 22px);
+    font-size: clamp(16px, 2vw, 20px);
     color: var(--slate-light);
     max-width: 620px;
     line-height: 1.65;
@@ -153,8 +195,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--blue);
-    color: #fff;
+    background: var(--amber);
+    color: #080c18;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -162,20 +204,13 @@
     border-radius: 4px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 0 0 0 rgba(37,99,235,0.4);
     position: relative;
     overflow: hidden;
   }
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
-  }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(37,99,235,0.45);
-    background: var(--blue-dim);
+    box-shadow: 0 8px 32px rgba(245,158,11,0.45);
+    background: var(--amber-dim);
   }
 
   .btn-secondary {
@@ -191,7 +226,7 @@
     border: 1px solid var(--border);
     transition: color 0.2s, border-color 0.2s;
   }
-  .btn-secondary:hover { color: var(--white); border-color: rgba(37,99,235,0.4); }
+  .btn-secondary:hover { color: var(--white); border-color: rgba(245,158,11,0.4); }
 
   .hero-proof {
     margin-top: 56px;
@@ -210,7 +245,7 @@
     color: var(--white);
     display: block;
   }
-  .proof-num span { color: var(--green); }
+  .proof-num span { color: var(--amber); }
   .proof-label {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -231,7 +266,7 @@
   .section-label {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--blue);
+    color: var(--amber);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -239,11 +274,18 @@
 
   .section-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(30px, 4vw, 52px);
+    font-size: clamp(28px, 4vw, 50px);
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
+  }
+
+  .sep {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber), var(--green));
+    margin: 20px 0 0;
   }
 
   /* ── PROBLEM ── */
@@ -263,11 +305,7 @@
   }
   .problem-card:hover { background: rgba(13,20,40,0.95); }
 
-  .problem-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
+  .problem-icon { font-size: 28px; margin-bottom: 16px; display: block; }
 
   .problem-card h3 {
     font-family: 'Space Grotesk', sans-serif;
@@ -291,10 +329,7 @@
     background: linear-gradient(180deg, transparent 0%, rgba(13,20,40,0.6) 50%, transparent 100%);
   }
 
-  .usecases-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .usecases-inner { max-width: 1100px; margin: 0 auto; }
 
   .usecases-grid {
     display: grid;
@@ -308,7 +343,7 @@
   .usecase-card {
     background: var(--navy);
     padding: 36px 32px;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s;
     position: relative;
     overflow: hidden;
   }
@@ -318,7 +353,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--blue), var(--green));
+    background: linear-gradient(90deg, var(--amber), var(--green));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
@@ -327,16 +362,12 @@
   .usecase-card:hover { background: rgba(13,20,40,0.95); }
   .usecase-card:hover::before { transform: scaleX(1); }
 
-  .usecase-icon {
-    font-size: 26px;
-    margin-bottom: 20px;
-    display: block;
-  }
+  .usecase-icon { font-size: 26px; margin-bottom: 20px; display: block; }
 
   .usecase-trigger {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--slate);
+    color: var(--amber);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 12px;
@@ -349,6 +380,16 @@
     color: var(--white);
     margin-bottom: 12px;
     line-height: 1.4;
+  }
+
+  .usecase-pain {
+    font-size: 13px;
+    color: var(--slate-light);
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 2px solid rgba(245,158,11,0.3);
+    padding-left: 12px;
+    margin-bottom: 16px;
   }
 
   .usecase-flow {
@@ -367,34 +408,20 @@
     color: var(--slate-light);
   }
 
-  .flow-step .arrow {
-    color: var(--green);
-    font-size: 10px;
-    flex-shrink: 0;
-  }
+  .flow-step .arrow { color: var(--amber); font-size: 10px; flex-shrink: 0; }
 
   .usecase-gain {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(16,185,129,0.1);
-    border: 1px solid rgba(16,185,129,0.2);
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.2);
     border-radius: 2px;
     padding: 4px 10px;
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--green);
+    color: var(--amber);
     margin-top: 4px;
-  }
-
-  .usecase-pain {
-    font-size: 13px;
-    color: var(--slate);
-    line-height: 1.6;
-    font-style: italic;
-    border-left: 2px solid rgba(37,99,235,0.3);
-    padding-left: 12px;
-    margin-bottom: 16px;
   }
 
   /* ── PYRAMID ── */
@@ -405,11 +432,7 @@
     background: linear-gradient(180deg, transparent 0%, rgba(13,20,40,0.5) 50%, transparent 100%);
   }
 
-  .pyramid-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .pyramid-inner { max-width: 900px; margin: 0 auto; text-align: center; }
 
   .pyramid-container {
     margin: 60px auto 0;
@@ -423,7 +446,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
     position: relative;
     transition: transform 0.3s;
   }
@@ -445,14 +467,14 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
   }
 
-  .step-1 .pstep-bar { width: min(340px, 90vw); background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25); }
-  .step-2 .pstep-bar { width: min(460px, 94vw); background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.35); }
-  .step-3 .pstep-bar { width: min(580px, 96vw); background: rgba(37,99,235,0.28); border: 1px solid rgba(37,99,235,0.5); }
-  .step-4 .pstep-bar { width: min(700px, 98vw); background: rgba(16,185,129,0.18); border: 1px solid rgba(16,185,129,0.4); }
-  .step-5 .pstep-bar { width: min(820px, 100vw); background: rgba(16,185,129,0.25); border: 1px solid rgba(16,185,129,0.5); }
+  .step-1 .pstep-bar { width: min(340px,90vw); background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+  .step-2 .pstep-bar { width: min(460px,94vw); background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.28); }
+  .step-3 .pstep-bar { width: min(580px,96vw); background: rgba(245,158,11,0.18); border: 1px solid rgba(245,158,11,0.38); }
+  .step-4 .pstep-bar { width: min(700px,98vw); background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); }
+  .step-5 .pstep-bar { width: min(820px,100vw); background: rgba(16,185,129,0.18); border: 1px solid rgba(16,185,129,0.45); }
 
   .pstep-num {
     font-family: 'DM Mono', monospace;
@@ -480,6 +502,7 @@
 
   .step-4 .pstep-name, .step-5 .pstep-name { color: var(--green); }
   .step-4 .pstep-num, .step-5 .pstep-num { color: var(--green-dim); }
+  .step-1 .pstep-num, .step-2 .pstep-num, .step-3 .pstep-num { color: var(--amber); }
 
   /* ── OFFERS ── */
   .offer-grid {
@@ -504,7 +527,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--blue);
+    background: var(--amber);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
@@ -512,13 +535,13 @@
 
   .offer-card.featured::before { transform: scaleX(1); background: var(--green); }
   .offer-card.featured { border-color: rgba(16,185,129,0.25); }
-  .offer-card:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-4px); }
+  .offer-card:hover { border-color: rgba(245,158,11,0.4); transform: translateY(-4px); }
   .offer-card:hover::before { transform: scaleX(1); }
 
   .offer-badge {
     display: inline-block;
-    background: rgba(16,185,129,0.15);
-    color: var(--green);
+    background: rgba(245,158,11,0.12);
+    color: var(--amber);
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
@@ -572,7 +595,7 @@
 
   .offer-features li::before {
     content: '→';
-    color: var(--green);
+    color: var(--amber);
     font-family: 'DM Mono', monospace;
     font-size: 12px;
     flex-shrink: 0;
@@ -593,15 +616,14 @@
     border-radius: 2px;
     transition: all 0.2s;
   }
-  .offer-cta:hover { background: rgba(37,99,235,0.1); color: var(--white); border-color: rgba(37,99,235,0.4); }
-  .offer-cta.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-  .offer-cta.primary:hover { background: var(--blue-dim); }
+  .offer-cta:hover { background: var(--amber-glow); color: var(--white); border-color: rgba(245,158,11,0.4); }
+  .offer-cta.primary { background: var(--amber); color: #080c18; border-color: var(--amber); }
+  .offer-cta.primary:hover { background: var(--amber-dim); }
 
   /* ── HOW ── */
   .how-steps {
     display: flex;
     flex-direction: column;
-    gap: 0;
     margin-top: 56px;
     position: relative;
   }
@@ -613,7 +635,7 @@
     top: 32px;
     bottom: 32px;
     width: 1px;
-    background: linear-gradient(180deg, var(--blue) 0%, var(--green) 100%);
+    background: linear-gradient(180deg, var(--amber) 0%, var(--green) 100%);
     opacity: 0.3;
   }
 
@@ -636,7 +658,7 @@
     justify-content: center;
     font-family: 'DM Mono', monospace;
     font-size: 13px;
-    color: var(--blue);
+    color: var(--amber);
     flex-shrink: 0;
     position: relative;
     z-index: 1;
@@ -662,7 +684,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     color: var(--slate);
-    background: rgba(37,99,235,0.08);
+    background: var(--amber-glow);
     border: 1px solid var(--border);
     padding: 3px 10px;
     border-radius: 2px;
@@ -681,7 +703,7 @@
     max-width: 700px;
     margin: 0 auto;
     background: var(--navy);
-    border: 1px solid rgba(16,185,129,0.25);
+    border: 1px solid rgba(245,158,11,0.25);
     padding: 72px 56px;
     position: relative;
     overflow: hidden;
@@ -692,21 +714,18 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 70%);
   }
 
   .cta-box .section-label { margin-bottom: 24px; }
-
-  .cta-box .section-title {
-    font-size: clamp(26px, 4vw, 44px);
-    margin-bottom: 20px;
-  }
+  .cta-box .section-title { font-size: clamp(26px, 4vw, 44px); margin-bottom: 20px; }
 
   .cta-box p {
     font-size: 16px;
     color: var(--slate-light);
     margin-bottom: 40px;
     line-height: 1.65;
+    position: relative;
   }
 
   .cta-note {
@@ -715,6 +734,7 @@
     color: var(--slate);
     margin-top: 20px;
     letter-spacing: 0.05em;
+    position: relative;
   }
 
   /* ── FOOTER ── */
@@ -733,7 +753,7 @@
     letter-spacing: 0.05em;
   }
 
-  footer a { color: var(--blue); text-decoration: none; }
+  footer a { color: var(--amber); text-decoration: none; }
   footer a:hover { color: var(--white); }
 
   /* ── ANIMATIONS ── */
@@ -751,20 +771,12 @@
 
   .orb {
     position: fixed;
-    width: 600px;
-    height: 600px;
+    width: 600px; height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transition: left 1s ease, top 1s ease;
-  }
-
-  .sep {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--green));
-    margin: 20px 0 0;
   }
 
   @media (max-width: 640px) {
@@ -782,27 +794,35 @@
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="orb" id="orb"></div>
 
+<!-- WhatsApp flottant -->
+<a href="https://wa.me/33768576883" target="_blank" class="wa-float" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>Nous écrire sur WhatsApp</span>
+</a>
+
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-badge">Ex-Superviseur industriel 80MW · Disponible pour audit</div>
   <p class="hero-eyebrow">Automatisation Ops · PME Industrielles</p>
   <h1 class="hero-title">
-    Vos 5 heures perdues<br>
-    chaque semaine ?<br>
-    <span class="accent-g">Je les récupère.</span>
+    Augmentez votre capacité<br>
+    de traitement<br>
+    <span class="accent">sans recruter.</span>
   </h1>
   <p class="hero-sub">
-    J'automatise les tâches répétitives de votre équipe.<br>
-    <strong>Sans changer vos outils. Sans développeur. Sans engagement.</strong>
+    J'automatise les process ops qui bloquent votre équipe,<br>
+    <strong>sans changer vos outils. Sans développeur. Sans engagement.</strong>
   </p>
   <div class="cta-group">
-    <a href="#audit" class="btn-primary">→ Réserver mon audit gratuit</a>
-    <a href="#comment" class="btn-secondary">Voir comment ça marche</a>
+    <a href="https://calendly.com/terencedevopsazure/30min" target="_blank" class="btn-primary">→ Réserver mon audit gratuit</a>
+    <a href="#cas-usage" class="btn-secondary">Voir les cas concrets</a>
   </div>
   <div class="hero-proof">
     <div class="proof-item">
-      <span class="proof-num">5<span>–</span>10h</span>
-      <span class="proof-label">récupérées / semaine</span>
+      <span class="proof-num">+<span>capacité</span></span>
+      <span class="proof-label">sans embauche</span>
     </div>
     <div class="proof-item">
       <span class="proof-num">30<span>min</span></span>
@@ -818,7 +838,7 @@
 <!-- ── PROBLEM ── -->
 <section class="section reveal">
   <p class="section-label">// Le problème</p>
-  <h2 class="section-title">Vous perdez du temps<br>que vous n'avez pas.</h2>
+  <h2 class="section-title">Votre équipe travaille dur.<br>Vos process, moins.</h2>
   <div class="sep"></div>
   <div class="problem-grid">
     <div class="problem-card">
@@ -839,13 +859,13 @@
     <div class="problem-card">
       <span class="problem-icon">📝</span>
       <h3>La saisie terrain reste manuelle</h3>
-      <p>Les opérateurs notent sur papier, vous ressaisissez. Chaque compte-rendu, chaque rapport d'incident passe par une intervention humaine.</p>
+      <p>Les opérateurs notent sur papier, vous ressaisissez. Chaque rapport d'incident passe par une intervention humaine. À chaque fois.</p>
     </div>
   </div>
 </section>
 
 <!-- ── USE CASES ── -->
-<section class="usecases-section reveal" id="comment">
+<section class="usecases-section reveal" id="cas-usage">
   <div class="usecases-inner">
     <p class="section-label">// Ce qu'on automatise concrètement</p>
     <h2 class="section-title">5 cas d'usage qui font<br>gagner du temps dès la semaine 1.</h2>
@@ -895,7 +915,7 @@
         <span class="usecase-icon">🚨</span>
         <p class="usecase-trigger">Incidents</p>
         <h3>Incident signalé → ticket créé + équipe notifiée</h3>
-        <p class="usecase-pain">"Les remontées terrain se perdent dans les mails, personne ne sait qui gère."</p>
+        <p class="usecase-pain">"Les remontées terrain se perdent dans les mails."</p>
         <div class="usecase-flow">
           <div class="flow-step"><span class="arrow">→</span> Incident signalé par email ou formulaire</div>
           <div class="flow-step"><span class="arrow">→</span> Ticket créé dans Notion / Airtable</div>
@@ -908,7 +928,7 @@
         <span class="usecase-icon">📈</span>
         <p class="usecase-trigger">Synthèse direction</p>
         <h3>Données hebdo → synthèse envoyée au dirigeant le lundi</h3>
-        <p class="usecase-pain">"Mon patron veut un point chaque semaine, je le fais à la main à chaque fois."</p>
+        <p class="usecase-pain">"Mon patron veut un point chaque semaine, je le fais à la main."</p>
         <div class="usecase-flow">
           <div class="flow-step"><span class="arrow">→</span> Données Excel consolidées automatiquement</div>
           <div class="flow-step"><span class="arrow">→</span> Synthèse mise en forme</div>
@@ -928,7 +948,6 @@
     <h2 class="section-title">Du problème à l'autonomie<br>en 5 niveaux</h2>
     <div class="sep" style="margin: 20px auto 0;"></div>
     <div class="pyramid-container">
-
       <div class="pyramid-step step-1">
         <div class="pstep-bar">
           <span class="pstep-num">01</span>
@@ -936,7 +955,6 @@
           <span class="pstep-detail">30 min · 0€</span>
         </div>
       </div>
-
       <div class="pyramid-step step-2">
         <div class="pstep-bar">
           <span class="pstep-num">02</span>
@@ -944,7 +962,6 @@
           <span class="pstep-detail">Livrable inclus</span>
         </div>
       </div>
-
       <div class="pyramid-step step-3">
         <div class="pstep-bar">
           <span class="pstep-num">03</span>
@@ -952,7 +969,6 @@
           <span class="pstep-detail">Pack Starter</span>
         </div>
       </div>
-
       <div class="pyramid-step step-4">
         <div class="pstep-bar">
           <span class="pstep-num">04</span>
@@ -960,7 +976,6 @@
           <span class="pstep-detail">Pack Business</span>
         </div>
       </div>
-
       <div class="pyramid-step step-5">
         <div class="pstep-bar">
           <span class="pstep-num">05</span>
@@ -968,7 +983,6 @@
           <span class="pstep-detail">Maintenance</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -992,7 +1006,7 @@
         <li>30 min de formation incluse</li>
         <li>Support 30 jours post-livraison</li>
       </ul>
-      <a href="#audit" class="offer-cta">Commencer ici</a>
+      <a href="https://calendly.com/terencedevopsazure/30min" target="_blank" class="offer-cta">Commencer ici</a>
     </div>
 
     <div class="offer-card featured">
@@ -1000,7 +1014,7 @@
       <div class="offer-price"><span class="currency">€</span>1 500</div>
       <p class="offer-period">paiement unique</p>
       <h3 class="offer-name">Business</h3>
-      <p class="offer-desc">3 automatisations prioritaires. Votre équipe gagne une demi-journée chaque semaine.</p>
+      <p class="offer-desc">3 automatisations prioritaires. Votre équipe gagne une capacité de traitement supplémentaire sans recruter.</p>
       <ul class="offer-features">
         <li>3 workflows automatisés</li>
         <li>Cartographie complète de vos process</li>
@@ -1008,7 +1022,7 @@
         <li>Formation équipe (2h)</li>
         <li>Support 60 jours post-livraison</li>
       </ul>
-      <a href="#audit" class="offer-cta primary">Je veux ce pack</a>
+      <a href="https://calendly.com/terencedevopsazure/30min" target="_blank" class="offer-cta primary">Je veux ce pack</a>
     </div>
 
     <div class="offer-card">
@@ -1024,7 +1038,7 @@
         <li>Point mensuel 45 min</li>
         <li>Réactivité sous 24h</li>
       </ul>
-      <a href="#audit" class="offer-cta">Après le Starter</a>
+      <a href="https://calendly.com/terencedevopsazure/30min" target="_blank" class="offer-cta">Après le Starter</a>
     </div>
 
   </div>
@@ -1035,7 +1049,6 @@
   <p class="section-label">// Comment ça se passe</p>
   <h2 class="section-title">De l'audit à la livraison<br>en moins d'un mois.</h2>
   <div class="how-steps">
-
     <div class="how-step">
       <div class="how-num">01</div>
       <div class="how-content">
@@ -1044,16 +1057,14 @@
         <span class="how-tag">Visio · Gratuit · Sans engagement</span>
       </div>
     </div>
-
     <div class="how-step">
       <div class="how-num">02</div>
       <div class="how-content">
         <h3>Devis en 24h — vous choisissez</h3>
-        <p>Je vous envoie un devis clair avec le gain de temps estimé chiffré. Vous décidez en connaissance de cause. Pas de pression.</p>
+        <p>Je vous envoie un devis clair avec le gain estimé chiffré. Vous décidez en connaissance de cause. Pas de pression.</p>
         <span class="how-tag">Devis · Gain estimé · Décision libre</span>
       </div>
     </div>
-
     <div class="how-step">
       <div class="how-num">03</div>
       <div class="how-content">
@@ -1062,7 +1073,6 @@
         <span class="how-tag">Make · n8n · Airtable · Notion</span>
       </div>
     </div>
-
     <div class="how-step">
       <div class="how-num">04</div>
       <div class="how-content">
@@ -1071,7 +1081,6 @@
         <span class="how-tag">Documentation · Formation · Autonomie</span>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1079,21 +1088,21 @@
 <section class="cta-section reveal" id="audit">
   <div class="cta-box">
     <p class="section-label">// Prochaine étape</p>
-    <h2 class="section-title">Quel process vous énerve<br>le plus en ce moment ?</h2>
+    <h2 class="section-title">Quel process freine<br>votre croissance ?</h2>
     <p>30 minutes. Je vous montre ce qu'on peut automatiser avec ce que vous avez déjà.<br>Sans investissement. Sans engagement.</p>
-    <a href="mailto:terencedevopsazure@gmail.com?subject=Audit%20Automatisation%20gratuit" class="btn-primary" style="display:inline-flex; font-size:17px; padding:18px 44px;">
+    <a href="https://calendly.com/terencedevopsazure/30min" target="_blank" class="btn-primary" style="display:inline-flex; font-size:17px; padding:18px 44px;">
       → Réserver mon audit gratuit
     </a>
-    <p class="cta-note">Réponse sous 24h · Visio 30 min · 100% gratuit</p>
+    <p class="cta-note">Réponse immédiate · Visio 30 min · 100% gratuit</p>
   </div>
 </section>
 
 <!-- ── FOOTER ── -->
 <footer>
   <p>
-    <strong style="color:var(--white)">Terence Hilderal</strong> · Automatisation Ops pour PME ·
-    <a href="mailto:terencedevopsazure@gmail.com">terencedevopsazure@gmail.com</a> ·
-    <a href="https://linkedin.com/in/terencehdl">LinkedIn</a>
+    <strong style="color:var(--white)">Terence Hilderal</strong> · Automatisation Ops pour PME industrielles ·
+    <a href="https://linkedin.com/in/terencehdl">LinkedIn</a> ·
+    <a href="https://wa.me/33768576883">WhatsApp</a>
   </p>
 </footer>
 
@@ -1123,12 +1132,12 @@
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
-      cursor.style.background = 'var(--green)';
+      cursor.style.background = 'var(--amber-light)';
       ring.style.opacity = '0';
     });
     el.addEventListener('mouseleave', () => {
       cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-      cursor.style.background = 'var(--blue)';
+      cursor.style.background = 'var(--amber)';
       ring.style.opacity = '1';
     });
   });
@@ -1145,7 +1154,7 @@
 
   document.querySelectorAll('.pyramid-step').forEach(step => {
     step.addEventListener('mouseenter', () => {
-      step.querySelector('.pstep-bar').style.boxShadow = '0 0 24px rgba(37,99,235,0.25)';
+      step.querySelector('.pstep-bar').style.boxShadow = '0 0 24px rgba(245,158,11,0.2)';
     });
     step.addEventListener('mouseleave', () => {
       step.querySelector('.pstep-bar').style.boxShadow = '';
