@@ -3,72 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TerOps — Automatisation Ops pour Agences de Com & Cabinets RH</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<title>TerOps — Automatisez vos opérations (Agences de Com & Cabinets RH)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f8fafc;
-    --white: #ffffff;
-    --text: #1e2937;
-    --slate: #64748b;
     --emerald: #10b981;
-    --amber: #f59e0b;
+    --slate: #64748b;
+    --text: #1e2937;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
-
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 24px 80px;
-    background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
-  }
-
-  .hero-badge {
-    background: #ecfdf5; color: var(--emerald); padding: 8px 20px; border-radius: 9999px;
-    font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;
-  }
-
-  .hero-title {
-    font-family: 'Space Grotesk', sans-serif; font-size: clamp(42px, 7vw, 68px); font-weight: 700;
-    line-height: 1.1; margin-bottom: 24px; color: #0f172a;
-  }
-
-  .hero-sub { font-size: 20px; color: var(--slate); max-width: 680px; margin: 0 auto 48px; }
-
-  .btn {
-    padding: 16px 36px; border-radius: 8px; font-weight: 600; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s;
-  }
-  .btn-primary { background: var(--emerald); color: white; }
-  .btn-primary:hover { background: #059669; transform: translateY(-3px); }
-
-  .section { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
-  .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 42px; text-align: center; margin-bottom: 60px; }
-
-  .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-
-  .offer-card {
-    background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 48px 40px;
-    transition: all 0.3s;
-  }
-  .offer-card:hover { border-color: var(--emerald); transform: translateY(-8px); }
-  .offer-card.featured { border-color: var(--emerald); }
-
-  /* WhatsApp Float */
+  body { font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--text); line-height: 1.7; margin:0; }
+  .hero { min-height: 95vh; display:flex; align-items:center; text-align:center; padding:140px 24px 80px; background: linear-gradient(135deg, #f0f9ff, #f8fafc); }
+  .hero-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 8vw, 74px); font-weight:700; line-height:1.05; margin-bottom:24px; }
+  .btn { padding:18px 44px; border-radius:8px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:12px; transition:all .3s; }
+  .btn-primary { background:var(--emerald); color:white; }
+  .btn-primary:hover { background:#059669; transform:translateY(-4px); }
+  .section { padding:110px 24px; max-width:1100px; margin:0 auto; }
+  .section-title { font-family:'Space Grotesk',sans-serif; font-size:42px; text-align:center; margin-bottom:64px; }
+  .card { background:white; padding:40px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.06); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:28px; }
   .wa-float {
-    position: fixed; bottom: 32px; right: 32px; z-index: 1000;
-    background: #25d366; color: #fff; padding: 14px 22px; border-radius: 50px;
-    text-decoration: none; font-weight: 700; box-shadow: 0 8px 32px rgba(37,211,102,0.4);
-    display: flex; align-items: center; gap: 10px; transition: all 0.2s;
+    position:fixed; bottom:32px; right:32px; z-index:1000;
+    background:#25d366; color:white; padding:16px 26px; border-radius:50px;
+    text-decoration:none; font-weight:700; box-shadow:0 10px 40px rgba(37,211,102,0.45);
+    display:flex; align-items:center; gap:12px;
   }
-  .wa-float:hover { transform: translateY(-4px); }
 </style>
 </head>
 <body>
@@ -76,119 +34,118 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <div class="hero-badge">✅ Audit gratuit • Livraison en 2 semaines</div>
-    <h1 class="hero-title">
-      J'automatise les ops de vos<br>
-      <span style="color:var(--emerald)">agences de communication</span> et<br>
-      <span style="color:var(--emerald)">cabinets RH</span>
-    </h1>
-    <p class="hero-sub">
-      Onboarding clients, reporting, relances, suivi candidats…<br>
-      <strong>8 à 15 heures par semaine récupérées</strong> avec Make, n8n et Airtable.
+    <div style="background:#ecfdf5;color:#10b981;padding:10px 28px;border-radius:9999px;display:inline-block;margin-bottom:32px;font-weight:600;">
+      Audit gratuit • Livraison en 10-14 jours
+    </div>
+    <h1 class="hero-title">J'automatise vos opérations<br>pour que vous puissiez vous concentrer sur ce qui compte</h1>
+    <p style="font-size:22px;max-width:720px;margin:0 auto 48px;color:#334155;">
+      Spécialisé dans les <strong>agences de communication</strong> et <strong>cabinets RH/recrutement</strong>.<br>
+      8 à 15 heures par semaine récupérées grâce à des automatisations fiables (Make, n8n, Airtable).
     </p>
-    <a href="https://calendly.com/ton-lien-calendly" class="btn btn-primary" target="_blank">
-      Réserver mon audit gratuit 30 min →
+    <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" target="_blank">
+      Réserver mon audit gratuit 30 minutes →
     </a>
   </div>
 </section>
 
-<!-- PROBLEMES -->
+<!-- BACKGROUND -->
 <section class="section">
-  <h2 class="section-title">Vos opérations vous font perdre du temps</h2>
+  <h2 class="section-title">Pourquoi moi ?</h2>
+  <div class="card" style="max-width:800px;margin:0 auto;text-align:center;">
+    <p>Avec mon background en développement et DevOps, j’ai une obsession pour les processus robustes qui ne cassent pas.</p>
+    <p>Aujourd’hui, je mets cette rigueur au service des agences de com et cabinets RH : je construis des automatisations 100% no-code qui s’intègrent parfaitement à vos outils existants (Notion, Slack, Google Workspace, ATS, Airtable…).</p>
+  </div>
+</section>
+
+<!-- DOULEURS -->
+<section class="section" style="background:#f1f5f9;">
+  <h2 class="section-title">Ce qui vous ralentit aujourd’hui</h2>
   <div class="grid">
     <div class="card">
-      <h3>Agences de com</h3>
-      <p>Briefs clients dispersés (mail/Slack/WhatsApp), reporting manuel, onboarding long, relances oubliées.</p>
+      <h3>Agences de Communication</h3>
+      <ul style="padding-left:20px;">
+        <li>Briefs clients qui arrivent par mail, Slack et WhatsApp</li>
+        <li>Reporting client manuel chaque vendredi</li>
+        <li>Onboarding long et chronophage</li>
+        <li>Relances oubliées</li>
+      </ul>
     </div>
     <div class="card">
-      <h3>Cabinets RH</h3>
-      <p>Suivi candidats chaotique, relances manuelles, compte-rendus d’entretiens, facturation après placement.</p>
+      <h3>Cabinets RH & Recrutement</h3>
+      <ul style="padding-left:20px;">
+        <li>Suivi candidats dispersé entre Excel, ATS et mail</li>
+        <li>Relances manuelles et oubliées</li>
+        <li>Compte-rendus d’entretiens à rédiger</li>
+        <li>Facturation retardée après placement</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="section" style="background:#f1f5f9;">
-  <h2 class="section-title">Comment ça se passe ?</h2>
+<section class="section">
+  <h2 class="section-title">Le process TerOps</h2>
   <div class="grid">
-    <div class="card">
-      <strong>1. Audit gratuit (30 min)</strong><br>
-      On regarde ensemble vos 3 plus gros points de friction.
-    </div>
-    <div class="card">
-      <strong>2. Proposition claire</strong><br>
-      Je vous présente les automatisations prioritaires + ROI attendu.
-    </div>
-    <div class="card">
-      <strong>3. Livraison en 10 jours</strong><br>
-      Construction + tests + formation de votre équipe.
-    </div>
-    <div class="card">
-      <strong>4. Maintenance mensuelle</strong><br>
-      Suivi, corrections et nouvelles évolutions.
-    </div>
+    <div class="card"><strong>1. Audit gratuit 30 min</strong><br>Je vous écoute et identifie vos 3 plus grosses fuites de temps.</div>
+    <div class="card"><strong>2. Proposition claire</strong><br>Je vous montre exactement ce qu’on va automatiser + le temps gagné.</div>
+    <div class="card"><strong>3. Livraison rapide</strong><br>Construction, tests, formation — tout en 10 à 14 jours.</div>
+    <div class="card"><strong>4. Maintenance & évolution</strong><br>350 €/mois pour que ça continue de tourner et s’améliore.</div>
   </div>
 </section>
 
 <!-- OFFRES -->
-<section class="section">
+<section class="section" style="background:#f1f5f9;">
   <h2 class="section-title">Nos offres</h2>
   <div class="grid">
-    <div class="offer-card">
-      <h3>Pack Ops</h3>
-      <div style="font-size:48px; font-weight:700; margin:20px 0;">1 490 €</div>
+    <div class="card">
+      <h3>Pack Ops Principal</h3>
+      <div style="font-size:48px;font-weight:700;margin:20px 0;color:var(--emerald);">1 490 €</div>
       <p><strong>3 automatisations prioritaires</strong> livrées en 10 jours.<br>Garantie : minimum 8h/semaine récupérées.</p>
-      <ul style="margin:24px 0; padding-left:20px;">
-        <li>Onboarding client automatique</li>
-        <li>Reporting hebdomadaire</li>
-        <li>Relances & facturation</li>
-      </ul>
-      <a href="https://calendly.com/ton-lien-calendly" class="btn btn-primary">Réserver l'audit</a>
+      <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" target="_blank" style="margin-top:24px;">Commencer par l'audit gratuit</a>
     </div>
-
-    <div class="offer-card featured">
-      <h3>Maintenance</h3>
-      <div style="font-size:48px; font-weight:700; margin:20px 0;">350 €<span style="font-size:20px">/mois</span></div>
-      <p>Suivi continu, corrections, 1 nouvelle automatisation par mois.</p>
-      <p style="color:var(--emerald); font-weight:600;">La clé pour que ça dure dans le temps.</p>
+    <div class="card">
+      <h3>Maintenance Récurrente</h3>
+      <div style="font-size:48px;font-weight:700;margin:20px 0;">350 € <span style="font-size:20px">/mois</span></div>
+      <p>Suivi, corrections, évolutions + 1 nouvelle automatisation par mois.</p>
+      <p style="color:var(--emerald);font-weight:600;">Recommandé pour un résultat durable</p>
     </div>
   </div>
 </section>
 
-<!-- CAS D'USAGE -->
-<section class="section" style="background:#f1f5f9;">
-  <h2 class="section-title">Ce que nous automatisons</h2>
+<!-- CAS USAGE -->
+<section class="section">
+  <h2 class="section-title">Exemples d’automatisations</h2>
   
-  <h3 style="text-align:center; margin:40px 0 20px;">Pour les Agences de Communication</h3>
+  <h3 style="text-align:center;margin:40px 0 20px;color:#334155;">Pour les Agences de Communication</h3>
   <div class="grid">
-    <div class="card">Onboarding client → Notion + Drive + Slack</div>
-    <div class="card">Reporting client automatique chaque lundi</div>
-    <div class="card">Relances J+3 / J+7 / J+14</div>
+    <div class="card">Onboarding client automatique (formulaire → Notion + Drive + Slack)</div>
+    <div class="card">Reporting hebdomadaire auto chaque lundi matin</div>
+    <div class="card">Séquence de relances clients (J+3, J+7, J+14)</div>
   </div>
 
-  <h3 style="text-align:center; margin:60px 0 20px;">Pour les Cabinets RH</h3>
+  <h3 style="text-align:center;margin:60px 0 20px;color:#334155;">Pour les Cabinets RH</h3>
   <div class="grid">
-    <div class="card">Réception CV → ATS + Notion + tags auto</div>
-    <div class="card">Relances candidats selon statut</div>
-    <div class="card">Compte-rendu d’entretien automatique</div>
+    <div class="card">Réception CV → ATS + Notion + tags automatiques</div>
+    <div class="card">Relances candidats selon leur statut</div>
+    <div class="card">Compte-rendu d’entretien généré et envoyé automatiquement</div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="section" style="text-align:center; background:#0f172a; color:white; border-radius:16px; margin:40px 24px;">
-  <h2 style="color:white;">Prêt à récupérer du temps ?</h2>
-  <p style="max-width:600px; margin:24px auto; font-size:18px;">Réservez votre audit gratuit de 30 minutes. Je vous dirai exactement ce qu’on peut automatiser chez vous.</p>
-  <a href="https://calendly.com/ton-lien-calendly" class="btn btn-primary" style="background:white; color:#0f172a; font-size:18px; padding:18px 48px;" target="_blank">
-    Réserver mon audit gratuit →
+<section class="section" style="text-align:center;background:#0f172a;color:white;border-radius:20px;margin:40px 24px;padding:100px 40px;">
+  <h2 style="color:white;">Prêt à récupérer du temps précieux ?</h2>
+  <p style="font-size:20px;max-width:600px;margin:32px auto;">Réservez votre audit gratuit. Je vous dirai en 30 minutes ce qu’on peut concrètement automatiser chez vous.</p>
+  <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" style="background:white;color:#0f172a;font-size:19px;padding:20px 52px;" target="_blank">
+    Réserver l'audit gratuit maintenant →
   </a>
 </section>
 
-<footer style="text-align:center; padding:60px 24px; color:var(--slate);">
-  TerOps © 2026 — Automatisation No-Code • Make • n8n • Airtable<br>
-  Full remote — France
+<footer style="text-align:center;padding:60px 24px;color:#64748b;">
+  TerOps — Automatisation Ops No-Code • Make • n8n • Airtable<br>
+  Full remote — France • 2026
 </footer>
 
-<!-- WhatsApp Floating -->
+<!-- WhatsApp -->
 <a href="https://wa.me/33768576883" target="_blank" class="wa-float">
   💬 Parler sur WhatsApp
 </a>
