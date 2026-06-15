@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <title>TerOps — Automatisation Ops · Agences &amp; Cabinets RH</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -859,10 +860,37 @@ footer {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .reveal.visible { opacity: 1; transform: none; }
+=======
+<title>TerOps — Automatisez vos opérations (Agences de Com & Cabinets RH)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #10b981;
+    --slate: #64748b;
+    --text: #1e2937;
+  }
+  body { font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--text); line-height: 1.7; margin:0; }
+  .hero { min-height: 95vh; display:flex; align-items:center; text-align:center; padding:140px 24px 80px; background: linear-gradient(135deg, #f0f9ff, #f8fafc); }
+  .hero-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 8vw, 74px); font-weight:700; line-height:1.05; margin-bottom:24px; }
+  .btn { padding:18px 44px; border-radius:8px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:12px; transition:all .3s; }
+  .btn-primary { background:var(--emerald); color:white; }
+  .btn-primary:hover { background:#059669; transform:translateY(-4px); }
+  .section { padding:110px 24px; max-width:1100px; margin:0 auto; }
+  .section-title { font-family:'Space Grotesk',sans-serif; font-size:42px; text-align:center; margin-bottom:64px; }
+  .card { background:white; padding:40px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.06); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:28px; }
+  .wa-float {
+    position:fixed; bottom:32px; right:32px; z-index:1000;
+    background:#25d366; color:white; padding:16px 26px; border-radius:50px;
+    text-decoration:none; font-weight:700; box-shadow:0 10px 40px rgba(37,211,102,0.45);
+    display:flex; align-items:center; gap:12px;
+  }
+>>>>>>> 2aa94ccfb54554681cd4476136ed3a57ec929f0e
 </style>
 </head>
 <body>
 
+<<<<<<< HEAD
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">Ter<span>Ops</span></a>
@@ -1162,5 +1190,126 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 reveals.forEach(r => observer.observe(r));
 </script>
+=======
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div style="background:#ecfdf5;color:#10b981;padding:10px 28px;border-radius:9999px;display:inline-block;margin-bottom:32px;font-weight:600;">
+      Audit gratuit • Livraison en 10-14 jours
+    </div>
+    <h1 class="hero-title">J'automatise vos opérations<br>pour que vous puissiez vous concentrer sur ce qui compte</h1>
+    <p style="font-size:22px;max-width:720px;margin:0 auto 48px;color:#334155;">
+      Spécialisé dans les <strong>agences de communication</strong> et <strong>cabinets RH/recrutement</strong>.<br>
+      8 à 15 heures par semaine récupérées grâce à des automatisations fiables (Make, n8n, Airtable).
+    </p>
+    <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" target="_blank">
+      Réserver mon audit gratuit 30 minutes →
+    </a>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="section">
+  <h2 class="section-title">Pourquoi moi ?</h2>
+  <div class="card" style="max-width:800px;margin:0 auto;text-align:center;">
+    <p>Avec mon background en développement et DevOps, j’ai une obsession pour les processus robustes qui ne cassent pas.</p>
+    <p>Aujourd’hui, je mets cette rigueur au service des agences de com et cabinets RH : je construis des automatisations 100% no-code qui s’intègrent parfaitement à vos outils existants (Notion, Slack, Google Workspace, ATS, Airtable…).</p>
+  </div>
+</section>
+
+<!-- DOULEURS -->
+<section class="section" style="background:#f1f5f9;">
+  <h2 class="section-title">Ce qui vous ralentit aujourd’hui</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Agences de Communication</h3>
+      <ul style="padding-left:20px;">
+        <li>Briefs clients qui arrivent par mail, Slack et WhatsApp</li>
+        <li>Reporting client manuel chaque vendredi</li>
+        <li>Onboarding long et chronophage</li>
+        <li>Relances oubliées</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Cabinets RH & Recrutement</h3>
+      <ul style="padding-left:20px;">
+        <li>Suivi candidats dispersé entre Excel, ATS et mail</li>
+        <li>Relances manuelles et oubliées</li>
+        <li>Compte-rendus d’entretiens à rédiger</li>
+        <li>Facturation retardée après placement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <h2 class="section-title">Le process TerOps</h2>
+  <div class="grid">
+    <div class="card"><strong>1. Audit gratuit 30 min</strong><br>Je vous écoute et identifie vos 3 plus grosses fuites de temps.</div>
+    <div class="card"><strong>2. Proposition claire</strong><br>Je vous montre exactement ce qu’on va automatiser + le temps gagné.</div>
+    <div class="card"><strong>3. Livraison rapide</strong><br>Construction, tests, formation — tout en 10 à 14 jours.</div>
+    <div class="card"><strong>4. Maintenance & évolution</strong><br>350 €/mois pour que ça continue de tourner et s’améliore.</div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section class="section" style="background:#f1f5f9;">
+  <h2 class="section-title">Nos offres</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Pack Ops Principal</h3>
+      <div style="font-size:48px;font-weight:700;margin:20px 0;color:var(--emerald);">1 490 €</div>
+      <p><strong>3 automatisations prioritaires</strong> livrées en 10 jours.<br>Garantie : minimum 8h/semaine récupérées.</p>
+      <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" target="_blank" style="margin-top:24px;">Commencer par l'audit gratuit</a>
+    </div>
+    <div class="card">
+      <h3>Maintenance Récurrente</h3>
+      <div style="font-size:48px;font-weight:700;margin:20px 0;">350 € <span style="font-size:20px">/mois</span></div>
+      <p>Suivi, corrections, évolutions + 1 nouvelle automatisation par mois.</p>
+      <p style="color:var(--emerald);font-weight:600;">Recommandé pour un résultat durable</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAS USAGE -->
+<section class="section">
+  <h2 class="section-title">Exemples d’automatisations</h2>
+  
+  <h3 style="text-align:center;margin:40px 0 20px;color:#334155;">Pour les Agences de Communication</h3>
+  <div class="grid">
+    <div class="card">Onboarding client automatique (formulaire → Notion + Drive + Slack)</div>
+    <div class="card">Reporting hebdomadaire auto chaque lundi matin</div>
+    <div class="card">Séquence de relances clients (J+3, J+7, J+14)</div>
+  </div>
+
+  <h3 style="text-align:center;margin:60px 0 20px;color:#334155;">Pour les Cabinets RH</h3>
+  <div class="grid">
+    <div class="card">Réception CV → ATS + Notion + tags automatiques</div>
+    <div class="card">Relances candidats selon leur statut</div>
+    <div class="card">Compte-rendu d’entretien généré et envoyé automatiquement</div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section" style="text-align:center;background:#0f172a;color:white;border-radius:20px;margin:40px 24px;padding:100px 40px;">
+  <h2 style="color:white;">Prêt à récupérer du temps précieux ?</h2>
+  <p style="font-size:20px;max-width:600px;margin:32px auto;">Réservez votre audit gratuit. Je vous dirai en 30 minutes ce qu’on peut concrètement automatiser chez vous.</p>
+  <a href="https://calendly.com/VOTRE-LIEN-CALENDLY" class="btn btn-primary" style="background:white;color:#0f172a;font-size:19px;padding:20px 52px;" target="_blank">
+    Réserver l'audit gratuit maintenant →
+  </a>
+</section>
+
+<footer style="text-align:center;padding:60px 24px;color:#64748b;">
+  TerOps — Automatisation Ops No-Code • Make • n8n • Airtable<br>
+  Full remote — France • 2026
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/33768576883" target="_blank" class="wa-float">
+  💬 Parler sur WhatsApp
+</a>
+
+>>>>>>> 2aa94ccfb54554681cd4476136ed3a57ec929f0e
 </body>
 </html>
